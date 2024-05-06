@@ -19,6 +19,7 @@ mod debug_articulations3;
 mod debug_big_colliders3;
 mod debug_boxes3;
 mod debug_cylinder3;
+mod debug_character_controller_walls;
 mod debug_deserialize3;
 mod debug_dynamic_collider_add3;
 mod debug_friction3;
@@ -94,6 +95,7 @@ pub fn main() {
         .to_camel_case();
 
     let mut builders: Vec<(_, fn(&mut Testbed))> = vec![
+        ("(Debug) Character controller walls", debug_character_controller_walls::init_world),
         ("Character controller", character_controller3::init_world),
         ("Fountain", fountain3::init_world),
         ("Primitives", primitives3::init_world),
